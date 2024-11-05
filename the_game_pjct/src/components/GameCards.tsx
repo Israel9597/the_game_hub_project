@@ -6,19 +6,22 @@ import Metacritics from "./Metacritics";
 import getCroppedImageUrl from "../services/getCroppedImageUrl";
 
 interface Props {
-  game: Games;
+  gamer: Games;
 }
-const GameCards = ({ game }: Props) => {
+const GameCards = ({ gamer }: Props) => {
   return (
-    <Card width="300px" borderRadius={5} overflow="hidden">
-      <Image src={getCroppedImageUrl(game.background_image)} alt={game.name} />
+    <Card>
+      <Image
+        src={getCroppedImageUrl(gamer.background_image)}
+        alt={gamer.name}
+      />
       <CardBody>
-        <Heading fontSize="1xl">{game.name}</Heading>
+        <Heading fontSize="1xl">{gamer.name}</Heading>
         <HStack justifyContent="space-between">
           <IconsMapping
-            platforms={game.parent_platforms.map((p) => p.platform)}
+            platforms={gamer.parent_platforms.map((p) => p.platform)}
           />
-          <Metacritics meta={game.metacritic} />
+          <Metacritics meta={gamer.metacritic} />
         </HStack>
       </CardBody>
     </Card>

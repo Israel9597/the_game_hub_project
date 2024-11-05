@@ -3,7 +3,7 @@ import React from "react";
 
 const LoadingSkeleton = () => {
   return (
-    <Card width="300px" borderRadius={5}>
+    <Card>
       <Skeleton height="200px" />
 
       <CardBody>
